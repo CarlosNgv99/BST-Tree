@@ -7,9 +7,28 @@
 //
 
 #include <iostream>
+#include "abb.hpp"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    Tree<int> tree;
+    
+    tree.Insert(tree.getRoot(), 13);
+    tree.Insert(tree.getRoot(), 7);
+    tree.Insert(tree.getRoot(), 5);
+    tree.Insert(tree.getRoot(), 23);
+    tree.Insert(tree.getRoot(), 2);
+
+    tree.Insert(tree.getRoot(), 31);
+
+
+
+    cout << "Valor de Magic: " << endl;
+    cout << tree.magic(tree.getRoot()) << endl;
+    cout << "Arbol generado (Se recorre en Pre-Order): " << endl;
+    tree.Preorder(tree.getRoot());
+    cout << endl;
+    cout << "Arbol generado (Se recorre en Post-Order): " << endl;
+    tree.Postorder(tree.getRoot());
+    cout << endl;
     return 0;
 }
